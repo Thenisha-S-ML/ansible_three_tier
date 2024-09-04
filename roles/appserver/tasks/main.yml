@@ -1,0 +1,18 @@
+---
+- name: Update apt repository and install Python
+  become: yes
+  apt:
+    name: python3
+    state: present
+
+- name: Ensure /opt/app directory exists
+  file:
+    path: /opt/app
+    state: directory
+    mode: '0755'
+
+- name: Deploy Application Script
+  copy:
+    src: /usr/lib/python3/dist-packages/twisted/application/app.py
+    dest: /opt/app/app.py
+    mode: '0755'

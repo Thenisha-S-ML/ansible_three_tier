@@ -1,0 +1,26 @@
+---
+- name: Deploy Three-Tier Application
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure all hosts are reachable
+      ping:
+
+- name: Configure Webserver
+  hosts: web
+  become: yes
+  roles:
+    - webserver
+
+- name: Configure Application Server
+  hosts: app
+  become: yes
+  roles:
+    - appserver
+
+- name: Configure Database Server
+  hosts: db
+  become: yes
+  roles:
+    - dbserver
+ 
