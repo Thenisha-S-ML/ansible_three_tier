@@ -12,6 +12,8 @@ This repository contains the Ansible playbooks and roles for deploying the three
     - playbook.yml : Main Ansible playbook for deploying the application.
     - rools/ : contains Ansible roles for each server type
            - Webserver/ : Role for configuring the webserver
+                - handlers/
+                     - main.yml
                 - tasks/
                      - main.yml
            - Appserver/ : Role for configuring the application server
